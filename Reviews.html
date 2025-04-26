@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SmokeyDaBear Reviews</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #d4f7d4; /* light green */
+      color: #4B0082; /* dark purple */
+    }
+
+    .container {
+      display: flex;
+      height: 100vh;
+      border: 2px solid black;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .menu-button {
+      font-size: 18px;
+      padding: 10px 20px;
+      border: 2px solid black;
+      background-color: white;
+      color: #4B0082;
+      cursor: pointer;
+      text-align: left;
+    }
+
+    .menu-button:hover {
+      background-color: #f0f0f0;
+    }
+
+    .main-content {
+      margin-left: 100px;
+      flex-grow: 1;
+    }
+
+    .main-content h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .info-text {
+      margin-bottom: 30px;
+    }
+
+    .month-buttons {
+      display: flex;
+      gap: 20px;
+    }
+
+    .month-buttons button {
+      padding: 10px 20px;
+      font-size: 16px;
+      border: 2px solid black;
+      background-color: white;
+      color: #4B0082;
+      cursor: pointer;
+    }
+
+    .month-buttons button:hover {
+      background-color: #e0e0e0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="sidebar">
+      <button class="menu-button" onclick="navigate('strainOfMonth')">Strain of the month</button>
+      <button class="menu-button" onclick="navigate('strainReviews')">Strain Reviews</button>
+      <button class="menu-button" onclick="navigate('dispensaryReviews')">Dispensary reviews</button>
+      <button class="menu-button" onclick="navigate('currentlySmoking')">Currently Smoking on</button>
+    </div>
+
+    <div class="main-content" id="content">
+      <h1>Welcome to SmokeyDaBear Reviews</h1>
+      <p>Click a button on the left to get started!</p>
+    </div>
+  </div>
+
+  <script>
+    function navigate(section) {
+      const content = document.getElementById('content');
+
+      if (section === 'strainOfMonth') {
+        content.innerHTML = `
+          <h1>Strain of the Month</h1>
+          <div class="info-text">
+            <p>How a strain wins:</p>
+            <p>1. How do I feel after smoking the strain.</p>
+            <p>2. The strain must be able to smoke at night and during the day.</p>
+          </div>
+          <div class="month-buttons">
+            <button>April</button>
+            <button>March</button>
+            <button>Feb</button>
+            <button>Jan</button>
+          </div>
+        `;
+      }
+
+      else if (section === 'strainReviews') {
+        content.innerHTML = `
+          <h1>Strain Reviews</h1>
+          <div class="info-text">
+            <p>Here you will find detailed reviews of different strains based on:</p>
+            <p>• Flavor profile</p>
+            <p>• Effects and potency</p>
+            <p>• Grower reputation</p>
+          </div>
+          <div class="month-buttons">
+            <button>Indica</button>
+            <button>Sativa</button>
+            <button>Hybrid</button>
+          </div>
+        `;
+      }
+
+      else if (section === 'dispensaryReviews') {
+        content.innerHTML = `
+          <h1>Dispensary Reviews</h1>
+          <div class="info-text">
+            <p>Check out my favorite dispensaries ranked by:</p>
+            <p>• Product quality</p>
+            <p>• Staff knowledge</p>
+            <p>• Pricing and deals</p>
+          </div>
+          <div class="month-buttons">
+            <button>Top Picks</button>
+            <button>Hidden Gems</button>
+            <button>Best Deals</button>
+          </div>
+        `;
+      }
+
+      else if (section === 'currentlySmoking') {
+        content.innerHTML = `
+          <h1>Currently Smoking On</h1>
+          <div class="info-text">
+            <p>What I'm currently enjoying:</p>
+            <p>• Strain name</p>
+            <p>• Effects I'm feeling</p>
+            <p>• Perfect times to light it up</p>
+          </div>
+          <div class="month-buttons">
+            <button>Morning</button>
+            <button>Afternoon</button>
+            <button>Night</button>
+          </div>
+        `;
+      }
+    }
+  </script>
+</body>
+</html>
